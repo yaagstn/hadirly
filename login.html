@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HadirLy - Login Modern</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <style>
+            :root {
+                --bg-blue: #d4e8ff;
+                --card-cream: #fffde7;
+                --primary-navy: #19295c;
+                --text-gray: #7c7c7c;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background-color: var(--bg-blue);
+                min-height: 100vh;
+                display: flex;
+            }
+
+            .container {
+                display: flex;
+                width: 100%;
+            }
+
+            /* SISI KIRI  */
+            .left-side {
+                flex: 1;
+                background-color: #e1eaf7;
+                border-bottom-right-radius: 50% 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+            }
+
+            .logo-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main-logo {
+                width: 80%;
+                max-width: 400px;
+                height: auto;
+                object-fit: contain;
+            }
+
+            /* SISI KANAN */
+            .right-side {
+                flex: 1.2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+                background-color: var(--bg-blue);
+                position: relative;
+            }
+
+            /* CARD LOGIN */
+            .login-card {
+                background-color: var(--card-cream);
+                width: 100%;
+                max-width: 420px;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+                animation: fadeIn 0.6s ease-out;
+            }
+
+            .welcome-text {
+                color: #314e86;
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 25px;
+                text-align: center;
+            }
+
+            .input-group {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .input-group label {
+                display: block;
+                color: var(--text-gray);
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+                font-weight: 600;
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 14px;
+                border: 1px solid #e0e0e0;
+                border-radius: 12px;
+                font-size: 1rem;
+                outline: none;
+                transition: 0.3s;
+            }
+
+            .input-group input:focus {
+                border-color: #6984b7;
+                box-shadow: 0 0 0 3px rgba(105, 132, 183, 0.1);
+            }
+
+            .forgot-link {
+                display: block;
+                font-size: 0.8rem;
+                color: var(--text-gray);
+                text-decoration: none;
+                margin-bottom: 25px;
+                cursor: pointer;
+                text-align: right;
+                font-weight: 500;
+            }
+
+            .forgot-link:hover {
+                text-decoration: underline;
+                color: var(--primary-navy);
+            }
+
+            .btn-login {
+                width: 100%;
+                padding: 15px;
+                background-color: var(--primary-navy);
+                color: white;
+                border: none;
+                border-radius: 12px;
+                font-size: 1rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 0.3s;
+                box-shadow: 0 4px 12px rgba(25, 41, 92, 0.2);
+            }
+
+            .btn-login:hover {
+                background-color: #243b82;
+                transform: translateY(-1px);
+            }
+
+            .footer-logo {
+                margin-top: 30px;
+            }
+
+            .footer-logo img {
+                height: 50px;
+                width: auto;
+                opacity: 0.8;
+            }
+
+            .register-text {
+                margin-top: 20px;
+                font-size: 0.85rem;
+                color: var(--text-gray);
+                text-align: center;
+            }
+
+            .register-text a {
+                color: var(--primary-navy);
+                text-decoration: none;
+                font-weight: 700;
+                transition: 0.3s;
+            }
+
+            .register-text a:hover {
+                color: #314e86;
+                text-decoration: underline;
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 768px) {
+                .left-side {
+                    display: none;
+                }
+
+                .right-side {
+                    padding: 20px;
+                }
+
+                .login-card {
+                    padding: 30px 20px;
+                }
+
+                /* Munculkan logo di atas card untuk mobile */
+                .right-side::before {
+                    content: '';
+                    display: block;
+                    width: 200px;
+                    height: 100px;
+                    background: url('logohadirly.png') no-repeat center;
+                    background-size: contain;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .hidden {
+                display: none;
+            }
+            .back-link {
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 15px;
+                color: var(--text-gray);
+                font-size: 0.85rem;
+                font-weight: 500;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-side">
+                <div class="logo-wrapper">
+                    <img src="logohadirly.png" alt="Logo HadirLy" class="main-logo" />
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="login-card">
+                    <div id="login-form">
+                        <h2 class="welcome-text">SELAMAT DATANG</h2>
+                        <form id="loginForm">
+                            <div class="input-group">
+                                <label>NIP/NISN</label>
+                                <input
+                                    type="text"
+                                    name="username"
+                                    placeholder="Masukkan NIP/NISN"
+                                    required />
+                            </div>
+                            <div class="input-group">
+                            <label>Kata Sandi</label>
+                            <div style="position: relative; width: 100%;">
+                                <input
+                                    type="password"
+                                    id="password" 
+                                    name="password"
+                                    placeholder="Masukkan Kata Sandi"
+                                    required
+                                    style="width: 100%; padding-right: 40px;" /> <i class="fas fa-eye" id="togglePassword" 
+                                style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8;">
+                                </i>
+                            </div>
+                        </div>
+                            <a href="lupa_password.html" class="forgot-link">Lupa Sandi?</a>
+
+                            <button type="submit" class="btn-login">MASUK</button>
+
+                            <p class="register-text">
+                                Belum punya akun?
+                                <a href="register.html">Daftar sekarang</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div id="forgot-form" class="hidden">
+                        <h2 class="welcome-text" style="font-size: 1.6rem">RESET SANDI</h2>
+                        <form>
+                            <div class="input-group">
+                                <label>NIP / NISN</label>
+                                <input type="text" placeholder="Masukkan identitas" required />
+                            </div>
+                            <button type="button" class="btn-login">KIRIM INSTRUKSI</button>
+                            <a href="login.html" class="back-link">← Kembali Masuk</a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-logo">
+                    <img src="logotetra.png" alt="TETRATECH" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const username = document.querySelector('input[name="username"]').value;
+                const password = document.querySelector('input[name="password"]').value;
+
+                try {
+                    const response = await fetch('/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username, password }),
+                    });
+
+                    const data = await response.json();
+
+                    // ✅ PINDAH KE SINI
+                    if (data.success) {
+                        const userData = data.user;
+
+                        // Simpan info user utama ke localStorage
+                        const userToSave = {
+                            nama: userData.nama,
+                            role: userData.role,
+                            nip: userData.nip,
+                            email: userData.email,
+                            no_hp: userData.no_hp,
+                            mapel: userData.mapel,
+                            id_kelas: userData.id_kelas,
+                        };
+
+                        localStorage.setItem('userLoggedIn', JSON.stringify(userToSave));
+
+                        if (userData.role === 'guru') {
+                            localStorage.setItem('id_guru', userData.nip);
+                        } else if (userData.role === 'siswa') {
+                            localStorage.setItem('id_siswa', userData.nip);
+                        } else if (userData.role === 'admin') {
+                            localStorage.setItem('id_admin', userData.nip);
+                        }
+
+                        const currentPath = window.location.pathname.substring(
+                            0,
+                            window.location.pathname.lastIndexOf('/') + 1
+                        );
+                        
+                        const targetUrl = window.location.origin + currentPath + data.redirect;
+
+                        console.log('Mengarahkan ke:', targetUrl);
+                        window.location.href = targetUrl;
+                        } else {
+                        // --- LOGIKA LOGIN GAGAL ---
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Login Gagal',
+                        text: data.message || 'Username atau Password salah!',
+                        confirmButtonColor: '#19295C'
+                        });
+                        if (submitBtn) submitBtn.disabled = false; 
+                        }
+                        } catch (error) {
+                        // --- LOGIKA SERVER ERROR ---
+                        console.error('Error Koneksi:', error);
+                        Swal.fire({
+                        icon: 'warning',
+                        title: 'Server Tidak Merespon',
+                        text: 'Pastikan terminal sudah menjalankan "node server.js"',
+                        confirmButtonColor: '#19295C'
+                        });
+                        if (submitBtn) submitBtn.disabled = false;
+                        }
+                        });
+                        document.addEventListener('DOMContentLoaded', function() {
+                        const togglePassword = document.querySelector('#togglePassword');
+                        const passwordInput = document.querySelector('#password');
+
+                        if (togglePassword && passwordInput) {
+                            togglePassword.addEventListener('click', function() {
+                                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                                passwordInput.setAttribute('type', type);
+                                this.classList.toggle('fa-eye-slash');
+                            });
+                        }
+                    });
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>
